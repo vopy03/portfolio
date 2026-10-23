@@ -77,6 +77,77 @@
     }, 3500);
   });
 
+  // report request: opens the visitor's mail app with the shop address filled in
+  var form = document.getElementById('lead-form');
+  if (form) form.addEventListener('submit', function (e) {
+    e.preventDefault();
+    var input = form.querySelector('input');
+    var url = input.value.trim();
+    if (!/^[^\s]+\.[^\s]{2,}$/.test(url)) {
+      input.classList.add('invalid');
+      input.focus();
+      return;
+    }
+    input.classList.remove('invalid');
+    var uk = body.classList.contains('uk');
+    var subject = (uk ? 'Безкоштовний звіт: ' : 'Free report: ') + url;
+    var text = uk
+      ? 'Добрий день, Володимире!\n\nБуду вдячний за безкоштовний звіт по магазину ' + url + '.\n\n'
+      : 'Hi Volodymyr,\n\nI would like a free report on my shop: ' + url + '.\n\n';
+    location.href = 'mailto:vopy.work@gmail.com?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(text);
+  });
+
+  // sticky button on phones: visible between the hero and the contact block
+  var sticky = document.querySelector('.sticky-cta');
+  var hero = document.querySelector('.welcome-block');
+  var contact = document.getElementById('contact');
+  if (sticky && hero && contact && 'IntersectionObserver' in window) {
+    var heroVisible = true, contactVisible = false;
+    var update = function () {
+      var on = !heroVisible && !contactVisible;
+      sticky.classList.toggle('show', on);
+      sticky.setAttribute('aria-hidden', !on);
+      sticky.tabIndex = on ? 0 : -1;
+    };
+    new IntersectionObserver(function (en) { heroVisible = en[0].isIntersecting; update(); }).observe(hero);
+    new IntersectionObserver(function (en) { contactVisible = en[0].isIntersecting; update(); }).observe(contact);
+  }
+
+  // questions: animate opening and closing instead of the instant jump
+  var faq = document.querySelector('.faq');
+  if (faq && !reduce && Element.prototype.animate) {
+    faq.classList.add('js-faq');
+    faq.querySelectorAll('details').forEach(function (d) {
+      var summary = d.querySelector('summary');
+      var running = null;
+      summary.addEventListener('click', function (e) {
+        e.preventDefault();
+        if (running) running.cancel();
+        var start = d.offsetHeight;
+        var closing = d.open && d.classList.contains('expanded');
+        var end;
+        if (closing) {
+          d.classList.remove('expanded');
+          d.classList.add('collapsing');
+          end = summary.offsetHeight + (d.offsetHeight - d.clientHeight);
+        } else {
+          d.classList.remove('collapsing');
+          d.classList.add('expanded');
+          d.open = true;
+          end = d.offsetHeight;
+        }
+        d.style.overflow = 'hidden';
+        running = d.animate({ height: [start + 'px', end + 'px'] }, { duration: 300, easing: 'cubic-bezier(.4, 0, .2, 1)' });
+        running.onfinish = function () {
+          if (closing) { d.open = false; d.classList.remove('collapsing'); }
+          d.style.overflow = '';
+          running = null;
+        };
+        running.oncancel = function () { d.style.overflow = ''; };
+      });
+    });
+  }
+
   // copy e-mail
   document.querySelectorAll('[data-copy]').forEach(function (b) {
     b.addEventListener('click', function () {

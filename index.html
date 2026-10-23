@@ -9,7 +9,10 @@
   <meta property="og:title" content="Volodymyr Pylypchuk · WordPress & PrestaShop developer">
   <meta property="og:description" content="Volodymyr Pylypchuk, full-stack WordPress, WooCommerce and PrestaShop developer. I make online shops load fast and sell without friction.">
   <meta property="og:url" content="https://vopy03.github.io/portfolio/">
-  <meta property="og:image" content="https://vopy03.github.io/portfolio/assets/img/self.webp">
+  <meta property="og:image" content="https://vopy03.github.io/portfolio/assets/img/og.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
   <link rel="canonical" href="https://vopy03.github.io/portfolio/">
   <link rel="icon" href="favicon.ico">
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -49,6 +52,7 @@
           <a href="index.html#services" class="header-btn"><span class="material-icons-outlined" aria-hidden="true">build</span><span class="header-btn-label"><span data-l="en">Services</span><span data-l="uk">Послуги</span></span></a>
           <a href="about.html" class="header-btn plink"><span class="material-icons-outlined" aria-hidden="true">self_improvement</span><span class="header-btn-label"><span data-l="en">About me</span><span data-l="uk">Про мене</span></span></a>
           </nav>
+          <a class="p-more-btn offcanvas-cta" href="#contact"><span data-l="en">Get a free site report</span><span data-l="uk">Отримати безкоштовний звіт</span></a>
         </div>
       </div>
     </div>
@@ -60,26 +64,35 @@
           <h1 class="ft-accent" data-l="en">Hi! 👋</h1><h1 class="ft-accent" data-l="uk">Привіт! 👋</h1>
           <h2 class="ft-subaccent" data-l="en">
             <div>I make online shops fast</div>
-            <div>Full-stack WordPress developer</div>
-            <div>75+ sites worked on</div>
+            <div>Fixed price, agreed upfront</div>
             <div>PageSpeed ~40 → 90+</div>
+            <div>75+ sites in 3+ years</div>
             <div>I build PrestaShop modules</div>
-            <div>I'm left handed :)</div>
           </h2>
           <h2 class="ft-subaccent" data-l="uk">
             <div>Роблю магазини швидкими</div>
-            <div>Full-stack розробник на WordPress</div>
-            <div>75+ сайтів у роботі</div>
+            <div>Фіксована ціна наперед</div>
             <div>PageSpeed ~40 → 90+</div>
+            <div>75+ сайтів за 3+ роки</div>
             <div>Створюю модулі PrestaShop</div>
-            <div>Я шульга :)</div>
           </h2>
           <p class="ft-solid" data-l="en">I'm Volodymyr Pylypchuk, a full-stack WordPress developer with 3+ years of commercial experience and 75+ sites I've worked on. I find what slows a shop down or loses orders, fix it for a fixed price, and show the result before and after.</p>
           <p class="ft-solid" data-l="uk">Я Володимир Пилипчук, full-stack розробник на WordPress, понад 3 роки комерційного досвіду і понад 75 сайтів, з якими я працював. Знаходжу, що гальмує магазин або губить замовлення, виправляю за фіксовану ціну й показую результат до і після.</p>
           <div class="ft-cta">
-            <a class="p-more-btn" href="#contact"><span data-l="en">Get a free site report</span><span data-l="uk">Безкоштовний звіт</span></a>
-            <a class="ghost-btn" href="https://www.linkedin.com/in/vopywebdev/" target="_blank" rel="noopener">LinkedIn</a>
+            <a class="p-more-btn" href="#contact"><span data-l="en">Get a free site report</span><span data-l="uk">Отримати безкоштовний звіт</span></a>
+            <a class="ghost-btn" href="#report"><span data-l="en">What's in the report</span><span data-l="uk">Що буде у звіті</span></a>
           </div>
+          <ul class="ft-trust" data-l="en">
+            <li>No admin access needed for the report</li>
+            <li>Changes tested on a copy of your site</li>
+            <li>You pay after you check the result</li>
+          </ul>
+          <ul class="ft-trust" data-l="uk">
+            <li>Для звіту не потрібен доступ до адмінки</li>
+            <li>Зміни спершу перевіряю на копії сайту</li>
+            <li>Оплата після того, як перевірите результат</li>
+          </ul>
+          <a class="ft-linkedin" href="https://www.linkedin.com/in/vopywebdev/" target="_blank" rel="noopener"><span data-l="en">My experience on LinkedIn</span><span data-l="uk">Мій досвід на LinkedIn</span> ↗</a>
         </div>
       </div>
     </div>
@@ -89,7 +102,7 @@
           <div class="fact panel"><b>75+</b><span data-l="en">sites in 3+ years of commercial work</span><span data-l="uk">сайтів за 3+ роки комерційного досвіду</span></div>
           <div class="fact panel"><b>40→90+</b><span data-l="en">Google PageSpeed after optimisation</span><span data-l="uk">Google PageSpeed після оптимізації</span></div>
           <div class="fact panel"><b>10+</b><span data-l="en">custom WordPress themes built</span><span data-l="uk">власних тем WordPress</span></div>
-          <div class="fact panel"><b>0 €</b><span data-l="en">for the first report on your shop</span><span data-l="uk">перший звіт по вашому магазину</span></div>
+          <div class="fact panel"><b data-l="en">0 €</b><b data-l="uk">0 грн</b><span data-l="en">for the first report on your shop</span><span data-l="uk">перший звіт по вашому магазину</span></div>
         </div>
 
         <div id="work"></div>
@@ -97,50 +110,122 @@
         <p class="section-sub" data-l="en">Modules I built at SoftSprint, sold on the official PrestaShop marketplace and SoftSprint's own store, plus ongoing work on client shops.</p><p class="section-sub" data-l="uk">Модулі, які я створив у SoftSprint (продаються на офіційному маркетплейсі PrestaShop і в магазині SoftSprint), і робота з магазинами клієнтів.</p>
         <div class="cards">
           <article class="card panel">
+            <div class="card-art" aria-hidden="true">
+              <svg viewBox="0 0 320 120" role="presentation">
+                <rect x="20" y="18" width="110" height="84" rx="8" class="a-box"/>
+                <text x="40" y="48" class="a-label">EN</text>
+                <rect x="40" y="60" width="70" height="6" rx="3" class="a-line"/>
+                <rect x="40" y="74" width="54" height="6" rx="3" class="a-line"/>
+                <path d="M146 60h28m-8-9 9 9-9 9" class="a-arrow"/>
+                <rect x="190" y="18" width="110" height="84" rx="8" class="a-box a-hi"/>
+                <text x="210" y="48" class="a-label">UA · DE · PL</text>
+                <rect x="210" y="60" width="70" height="6" rx="3" class="a-line a-line-hi"/>
+                <rect x="210" y="74" width="54" height="6" rx="3" class="a-line a-line-hi"/>
+              </svg>
+            </div>
             <span class="tag">PrestaShop · ChatGPT API</span>
             <h3 data-l="en">ChatGPT content translator</h3><h3 data-l="uk">Перекладач контенту на ChatGPT</h3>
             <p data-l="en">Translates products, categories, pages, the theme and modules in bulk with one click, producing unique translated text for SEO. I wrote all of the module's logic, apart from the SaaS integration.</p><p data-l="uk">Масово перекладає товари, категорії, сторінки, тему й модулі в один клік і дає унікальні тексти для SEO. Усю логіку модуля написав я, крім інтеграції з SaaS.</p>
             <a class="card-link" href="https://addons.prestashop.com/en/international-localization/95217-translate-all-in-one-using-chatgpt-seo-translation.html" target="_blank" rel="noopener"><span data-l="en">On PrestaShop Addons</span><span data-l="uk">На PrestaShop Addons</span> ↗</a>
           </article>
           <article class="card panel">
+            <div class="card-art" aria-hidden="true">
+              <svg viewBox="0 0 320 120" role="presentation">
+                <circle cx="160" cy="60" r="26" class="a-box a-hi"/>
+                <text x="160" y="66" text-anchor="middle" class="a-label">%</text>
+                <circle cx="56" cy="32" r="16" class="a-box"/>
+                <circle cx="56" cy="90" r="16" class="a-box"/>
+                <circle cx="264" cy="32" r="16" class="a-box"/>
+                <circle cx="264" cy="90" r="16" class="a-box"/>
+                <path d="M72 36l62 16M72 86l62-16M248 36l-62 16M248 86l-62-16" class="a-arrow"/>
+              </svg>
+            </div>
             <span class="tag">PrestaShop</span>
             <h3 data-l="en">Affiliate program</h3><h3 data-l="uk">Партнерська програма</h3>
             <p data-l="en">Referrals and promotional links, so a shop can pay partners for the customers they bring. I built the whole module; it now ships as part of SoftSprint's Multi-tool module.</p><p data-l="uk">Реферали й промопосилання, щоб магазин платив партнерам за приведених покупців. Модуль повністю мій, зараз він входить до модуля Multi-tool від SoftSprint.</p>
             <a class="card-link" href="https://softsprint.net/2023/10/14/affiliate-program-with-referrals-promotional-links-prestashop-module/" target="_blank" rel="noopener"><span data-l="en">Module page</span><span data-l="uk">Сторінка модуля</span> ↗</a>
           </article>
           <article class="card panel">
+            <div class="card-art" aria-hidden="true">
+              <svg viewBox="0 0 320 120" role="presentation">
+                <g class="a-box">
+                  <rect x="20" y="16" width="80" height="40" rx="6"/><rect x="120" y="16" width="80" height="40" rx="6"/><rect x="220" y="16" width="80" height="40" rx="6"/>
+                  <rect x="20" y="66" width="80" height="40" rx="6"/><rect x="220" y="66" width="80" height="40" rx="6"/>
+                </g>
+                <rect x="120" y="66" width="80" height="40" rx="6" class="a-box a-hi"/>
+                <path d="M36 36h48M136 36h30M236 36h40M36 86h36M236 86h48" class="a-line-s"/>
+                <path d="M146 86l10 10 20-20" class="a-check"/>
+              </svg>
+            </div>
             <span class="tag" data-l="en">Client work</span><span class="tag" data-l="uk">Для клієнтів</span>
             <h3 data-l="en">Shops across many niches</h3><h3 data-l="uk">Магазини різних ніш</h3>
             <p data-l="en">Watches, fashion, cosmetics, printing and packaging, airsoft, electronics and tourism: bug fixes, speed work, custom features and module changes for each shop.</p><p data-l="uk">Годинники, одяг, косметика, друк і пакування, airsoft, електроніка, туризм: баги, швидкість, власний функціонал і допрацювання модулів під конкретний магазин.</p>
           </article>
         </div>
 
+        <div class="cta-strip panel">
+          <p data-l="en">Want to know what holds your shop back?</p><p data-l="uk">Хочете знати, що гальмує ваш магазин?</p>
+          <a class="p-more-btn" href="#contact"><span data-l="en">Get a free report</span><span data-l="uk">Отримати звіт</span></a>
+        </div>
+
         <div id="services"></div>
         <h3 class="before-projects-label" data-l="en">What I fix</h3><h3 class="before-projects-label" data-l="uk">Що я виправляю</h3>
         <p class="section-sub" data-l="en">Fixed price, agreed before I start.</p><p class="section-sub" data-l="uk">Фіксована ціна, погоджена до початку.</p>
-        <div class="cards two">
+        <div class="cards four">
           <article class="card panel">
+            <svg viewBox="0 0 48 48" class="svc-icon" aria-hidden="true"><rect x="13" y="4" width="22" height="40" rx="4"/><path d="M19 36h10"/><path d="M18 22a6 6 0 0 1 12 0" /><path d="M24 22l4-4"/></svg>
             <h3 data-l="en">Slow mobile site</h3><h3 data-l="uk">Повільна мобільна версія</h3>
             <p data-l="en">Images, lazy loading, caching and heavy scripts. You get the PageSpeed score and load times before and after.</p><p data-l="uk">Зображення, ліниве завантаження, кеш і важкі скрипти. Ви отримуєте оцінку PageSpeed і час завантаження до і після.</p>
             <span class="price" data-l="en">from €150</span><span class="price" data-l="uk">від 5 000 грн</span>
           </article>
           <article class="card panel">
+            <svg viewBox="0 0 48 48" class="svc-icon" aria-hidden="true"><rect x="6" y="8" width="36" height="12" rx="3"/><rect x="6" y="26" width="36" height="12" rx="3"/><path d="M12 14h2M12 32h2"/><path d="M30 14h6M30 32h6"/></svg>
             <h3 data-l="en">Slow server response</h3><h3 data-l="uk">Повільна відповідь сервера</h3>
             <p data-l="en">When Google's real-user data fails Core Web Vitals: page caching, plugin clean-up, database and hosting advice.</p><p data-l="uk">Коли реальні дані Google не проходять Core Web Vitals: кеш сторінок, чистка плагінів, база даних і поради щодо хостингу.</p>
             <span class="price" data-l="en">from €200</span><span class="price" data-l="uk">від 7 000 грн</span>
           </article>
           <article class="card panel">
+            <svg viewBox="0 0 48 48" class="svc-icon" aria-hidden="true"><path d="M4 8h6l5 22h22l4-15H13"/><circle cx="18" cy="38" r="3"/><circle cx="34" cy="38" r="3"/></svg>
             <h3 data-l="en">Cart and checkout</h3><h3 data-l="uk">Кошик і оформлення замовлення</h3>
             <p data-l="en">Free-shipping threshold, bundles, reviews, payment options, pop-ups and translations: the places where orders get lost.</p><p data-l="uk">Поріг безкоштовної доставки, набори, відгуки, способи оплати, спливні вікна й переклади: місця, де губляться замовлення.</p>
             <span class="price" data-l="en">from €150</span><span class="price" data-l="uk">від 5 000 грн</span>
           </article>
           <article class="card panel">
-            <h3 data-l="en">Custom features and integrations</h3><h3 data-l="uk">Власний функціонал та інтеграції</h3>
-            <p data-l="en">Custom plugins, PrestaShop modules and WordPress–CRM integrations when a ready-made plugin can't do the job.</p><p data-l="uk">Власні плагіни, модулі PrestaShop та інтеграції WordPress з CRM, коли готовий плагін не справляється.</p>
+            <svg viewBox="0 0 48 48" class="svc-icon" aria-hidden="true"><rect x="6" y="6" width="36" height="36" rx="4"/><path d="M6 16h36"/><path d="M18 16v26"/><path d="M24 24h12M24 31h8"/></svg>
+            <h3 data-l="en">Product page, cart and mobile polish</h3><h3 data-l="uk">Доопрацювання ключових сторінок</h3>
+            <p data-l="en">Spacing, layout, squashed photos and small bugs on the pages where people decide to buy. No full redesign needed.</p><p data-l="uk">Картка товару, кошик і мобільна версія: відступи, сітка, сплющені фото й дрібні баги там, де людина вирішує купити. Без повного редизайну.</p>
+            <span class="price" data-l="en">from €250</span><span class="price" data-l="uk">від 6 000 грн</span>
+          </article>
+          <article class="card panel">
+            <svg viewBox="0 0 48 48" class="svc-icon" aria-hidden="true"><circle cx="24" cy="24" r="18"/><path d="M6 24h36"/><path d="M24 6c-6 6-6 30 0 36M24 6c6 6 6 30 0 36"/></svg>
+            <h3 data-l="en">Translation and multiple languages</h3><h3 data-l="uk">Переклад і мультимовність</h3>
+            <p data-l="en">TranslatePress set up properly, automatic translation of the rest of the site, translated URLs and correct language tags for Google.</p><p data-l="uk">Налаштування TranslatePress, автоматичний переклад решти сайту, перекладені адреси сторінок і правильні мовні теги для Google.</p>
+            <span class="price" data-l="en">from €150</span><span class="price" data-l="uk">від 4 000 грн</span>
+          </article>
+          <article class="card panel">
+            <svg viewBox="0 0 48 48" class="svc-icon" aria-hidden="true"><path d="M38 18A15 15 0 0 0 11 14"/><path d="M10 6v8h8"/><path d="M10 30a15 15 0 0 0 27 4"/><path d="M38 42v-8h-8"/></svg>
+            <h3 data-l="en">Product import and sync</h3><h3 data-l="uk">Імпорт і синхронізація товарів</h3>
+            <p data-l="en">Supplier price lists in XML or CSV loaded automatically: new products, prices and stock updated on schedule, without manual copying.</p><p data-l="uk">Прайси постачальників у XML чи CSV завантажуються автоматично: нові товари, ціни й залишки оновлюються за розкладом, без ручного копіювання.</p>
+            <span class="price" data-l="en">from €200</span><span class="price" data-l="uk">від 5 000 грн</span>
+          </article>
+          <article class="card panel">
+            <svg viewBox="0 0 48 48" class="svc-icon" aria-hidden="true"><path d="M18 6v10M30 6v10"/><path d="M12 16h24v8a12 12 0 0 1-24 0z"/><path d="M24 36v6"/></svg>
+            <h3 data-l="en">Payment, shipping and CRM integrations</h3><h3 data-l="uk">Інтеграції оплати, доставки й CRM</h3>
+            <p data-l="en">Card payments with Apple Pay and Google Pay, delivery services and your CRM connected to the shop, so orders arrive complete and paid.</p><p data-l="uk">Нова Пошта й Укрпошта з вибором відділення, monobank і LiqPay, KeyCRM чи SalesDrive: замовлення приходять повними й оплаченими.</p>
+            <span class="price" data-l="en">from €150</span><span class="price" data-l="uk">від 4 000 грн</span>
+          </article>
+          <article class="card panel">
+            <svg viewBox="0 0 48 48" class="svc-icon" aria-hidden="true"><path d="M8 14h10a4 4 0 1 1 8 0h10v10a4 4 0 1 1 0 8v10H26a4 4 0 1 0-8 0H8V32a4 4 0 1 0 0-8z"/></svg>
+            <h3 data-l="en">Custom features</h3><h3 data-l="uk">Власний функціонал</h3>
+            <p data-l="en">Custom plugins and PrestaShop modules when a ready-made plugin can't do the job.</p><p data-l="uk">Власні плагіни й модулі PrestaShop, коли готовий плагін не справляється.</p>
             <span class="price" data-l="en">quoted per task</span><span class="price" data-l="uk">ціна під задачу</span>
           </article>
         </div>
         <p class="note" data-l="en">Ongoing care after the fix: updates, a monthly speed check and small edits, from €49 a month.</p><p class="note" data-l="uk">Супровід після виправлення: оновлення, щомісячна перевірка швидкості й дрібні правки, від 1 500 грн на місяць.</p>
+        <div class="cta-strip panel">
+          <p data-l="en">Not sure which of these your shop needs? The free report will show it.</p><p data-l="uk">Не знаєте, що з цього потрібно вашому магазину? Безкоштовний звіт покаже.</p>
+          <a class="p-more-btn" href="#contact"><span data-l="en">Request a report</span><span data-l="uk">Замовити звіт</span></a>
+        </div>
 
         <h3 class="before-projects-label" data-l="en">How it works</h3><h3 class="before-projects-label" data-l="uk">Як це працює</h3>
         <p class="section-sub" data-l="en">Four steps, no surprises.</p><p class="section-sub" data-l="uk">Чотири кроки без сюрпризів.</p>
@@ -148,7 +233,7 @@
           <li class="panel"><h3 data-l="en">Free report</h3><h3 data-l="uk">Безкоштовний звіт</h3><p data-l="en">I check the shop and show what I found.</p><p data-l="uk">Перевіряю магазин і показую, що знайшов.</p></li>
           <li class="panel"><h3 data-l="en">Fixed quote</h3><h3 data-l="uk">Фіксована ціна</h3><p data-l="en">We agree the scope and price in writing.</p><p data-l="uk">Погоджуємо обсяг робіт і ціну письмово.</p></li>
           <li class="panel"><h3 data-l="en">The fix</h3><h3 data-l="uk">Виправлення</h3><p data-l="en">Done on a copy first, then on the live site.</p><p data-l="uk">Спершу на копії сайту, потім на робочому.</p></li>
-          <li class="panel"><h3 data-l="en">Before and after</h3><h3 data-l="uk">До і після</h3><p data-l="en">You get the numbers and a short summary.</p><p data-l="uk">Ви отримуєте цифри й короткий підсумок.</p></li>
+          <li class="panel"><h3 data-l="en">Before and after</h3><h3 data-l="uk">До і після</h3><p data-l="en">You get the numbers and a short summary, and pay once you've checked the result.</p><p data-l="uk">Ви отримуєте цифри й короткий підсумок і платите після того, як перевірите результат.</p></li>
         </ol>
 
         <div id="report"></div>
@@ -167,13 +252,74 @@
               <li>Що потрібно для кожного виправлення і скільки це коштує</li>
             </ul>
           </div>
-          <a class="p-more-btn" href="#contact"><span data-l="en">Request a report</span><span data-l="uk">Замовити звіт</span></a>
+          <figure class="report-mock" aria-label="Example of the report layout">
+            <div class="rm-page">
+              <div class="rm-head"><span data-l="en">Shop audit</span><span data-l="uk">Аудит магазину</span><em>your-shop.com</em></div>
+              <div class="rm-score">
+                <div class="rm-ring rm-bad">38</div>
+                <span class="rm-arrow">→</span>
+                <div class="rm-ring rm-good">90+</div>
+                <span class="rm-cap" data-l="en">Mobile PageSpeed, now and after the fix</span><span class="rm-cap" data-l="uk">PageSpeed на мобільному: зараз і після виправлення</span>
+              </div>
+              <ol class="rm-issues">
+                <li><i class="rm-dot r"></i><span data-l="en">Checkout doesn't ask for a phone number</span><span data-l="uk">Оформлення не просить телефон</span></li>
+                <li><i class="rm-dot y"></i><span data-l="en">Product photos 5× heavier than needed</span><span data-l="uk">Фото товарів у 5 разів важчі, ніж треба</span></li>
+                <li><i class="rm-dot y"></i><span data-l="en">Search shows sold-out items first</span><span data-l="uk">Пошук показує розпродане першим</span></li>
+              </ol>
+              <div class="rm-foot"><span data-l="en">Fix 1–3: fixed price, 3 working days</span><span data-l="uk">Виправлення 1–3: фіксована ціна, 3 робочі дні</span></div>
+            </div>
+            <figcaption data-l="en">Example layout. Your report uses your shop's real numbers and screenshots.</figcaption>
+            <figcaption data-l="uk">Приклад макета. У вашому звіті будуть реальні цифри й скріншоти вашого магазину.</figcaption>
+          </figure>
+        </div>
+        <div class="report-cta"><a class="p-more-btn" href="#contact"><span data-l="en">Request a report</span><span data-l="uk">Замовити звіт</span></a></div>
+
+        <h3 class="before-projects-label" data-l="en">Questions</h3><h3 class="before-projects-label" data-l="uk">Питання</h3>
+        <div class="faq">
+          <div class="faq-col">
+            <details class="panel" style="--o:1">
+              <summary><span data-l="en">Do you need access to my admin panel?</span><span data-l="uk">Потрібен доступ до адмінки?</span></summary>
+              <p data-l="en">Not for the report: I go through the shop the way a customer does. For the fix I'll need access, ideally a separate account you can remove afterwards.</p>
+              <p data-l="uk">Для звіту ні: я проходжу магазин так, як це робить покупець. Для виправлень знадобиться доступ, найкраще окремий акаунт, який ви потім видалите.</p>
+            </details>
+            <details class="panel" style="--o:3">
+              <summary><span data-l="en">How do I pay?</span><span data-l="uk">Як оплатити?</span></summary>
+              <p data-l="en">The price is fixed and agreed in writing before I start. I'm a registered sole proprietor in Ukraine and send an invoice in EUR or UAH, paid by bank transfer.</p>
+              <p data-l="uk">Ціна фіксована й погоджена письмово до початку роботи. Я зареєстрований ФОП в Україні: виставляю рахунок у гривнях або євро, оплата на рахунок.</p>
+            </details>
+            <details class="panel" style="--o:5">
+              <summary><span data-l="en">Which platforms do you work with?</span><span data-l="uk">З якими платформами працюєте?</span></summary>
+              <p data-l="en">Mostly WordPress and WooCommerce, and PrestaShop, where I also build modules.</p>
+              <p data-l="uk">Здебільшого WordPress і WooCommerce, а також PrestaShop, для якого я пишу модулі.</p>
+            </details>
+          </div>
+          <div class="faq-col">
+            <details class="panel" style="--o:2">
+              <summary><span data-l="en">What if something breaks?</span><span data-l="uk">А якщо щось зламається?</span></summary>
+              <p data-l="en">Changes are made on a copy of your site first. They go to the live shop only after you've seen them, with a backup made beforehand.</p>
+              <p data-l="uk">Зміни спершу робляться на копії сайту. На робочий магазин вони потрапляють лише після того, як ви їх побачите, і перед цим робиться резервна копія.</p>
+            </details>
+            <details class="panel" style="--o:4">
+              <summary><span data-l="en">Do you work with shops outside Ukraine?</span><span data-l="uk">Працюєте з магазинами не з України?</span></summary>
+              <p data-l="en">Yes. I work in English and Ukrainian, remotely, with shops in any country.</p>
+              <p data-l="uk">Так. Працюю віддалено, українською та англійською, з магазинами з будь-якої країни.</p>
+            </details>
+          </div>
         </div>
 
         <div style="height:40px"></div>
         <section class="contact panel" id="contact">
           <h3 data-l="en">Send me your shop's address</h3><h3 data-l="uk">Надішліть адресу свого магазину</h3>
           <p data-l="en">I'll reply with a free one-page report. English and Ukrainian.</p><p data-l="uk">Відповім безкоштовним звітом на одну сторінку. Українською та англійською.</p>
+          <form class="lead-form" id="lead-form" novalidate>
+            <label for="lead-url" class="lf-label"><span data-l="en">Your shop's address</span><span data-l="uk">Адреса вашого магазину</span></label>
+            <div class="lf-row">
+              <input id="lead-url" name="url" type="text" inputmode="url" autocomplete="url" placeholder="your-shop.com" required>
+              <button class="p-more-btn" type="submit"><span data-l="en">Get my free report</span><span data-l="uk">Отримати звіт</span></button>
+            </div>
+            <p class="lf-hint" data-l="en">Opens your email app with the message ready. Or just write to me in Telegram.</p>
+            <p class="lf-hint" data-l="uk">Відкриє вашу пошту з готовим листом. Або просто напишіть мені в Telegram.</p>
+          </form>
           <div class="rows">
             <div class="row"><span class="k">Email</span><a class="v" id="v-email" href="mailto:vopy.work@gmail.com">vopy.work@gmail.com</a><button class="copy" type="button" data-copy="v-email"><span data-l="en">Copy</span><span data-l="uk">Копіювати</span></button></div>
             <div class="row"><span class="k">LinkedIn</span><a class="v" href="https://www.linkedin.com/in/vopywebdev/" target="_blank" rel="noopener">linkedin.com/in/vopywebdev</a></div>
@@ -182,6 +328,7 @@
         </section>
       </div>
     </div>
+    <a class="sticky-cta p-more-btn" href="#contact" aria-hidden="true" tabindex="-1"><span data-l="en">Get a free site report</span><span data-l="uk">Отримати безкоштовний звіт</span></a>
     <footer>
       <div class="footer-wrapper">
         <div class="footer-main-content">
@@ -194,12 +341,6 @@
           <div class="footer-right-side">
             <div></div>
             <div class="footer-social">
-              <div class="footer-social-other">
-                <h4 class="footer-social-title"><span data-l="en">Other social networks:</span><span data-l="uk">Інші соцмережі:</span></h4>
-                <div class="social-btn-collection">
-                  <a href="https://github.com/vopy03" class="footer-social-btn" target="_blank" rel="noopener" aria-label="GitHub"><img alt="" src="assets/img/social/ghIcon.svg" width="28" height="28"></a>
-                </div>
-              </div>
               <div class="footer-social-contact">
                 <h4 class="footer-social-title"><span data-l="en">Contact me:</span><span data-l="uk">Зв’язатися зі мною:</span></h4>
                 <div class="social-btn-collection">
