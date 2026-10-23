@@ -79,7 +79,7 @@
 
   // analytics: GoatCounter (no cookies, so no consent banner needed).
   // Put the site code from goatcounter.com here, e.g. 'vopy' for vopy.goatcounter.com; empty = analytics off.
-  var GOATCOUNTER = '';
+  var GOATCOUNTER = 'vopy03';
   function track(name) {
     if (window.goatcounter && window.goatcounter.count) window.goatcounter.count({ path: name, title: name, event: true });
   }
