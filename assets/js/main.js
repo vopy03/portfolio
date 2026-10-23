@@ -77,6 +77,40 @@
     }, 3500);
   });
 
+  // analytics: GoatCounter (no cookies, so no consent banner needed).
+  // Put the site code from goatcounter.com here, e.g. 'vopy' for vopy.goatcounter.com; empty = analytics off.
+  var GOATCOUNTER = '';
+  function track(name) {
+    if (window.goatcounter && window.goatcounter.count) window.goatcounter.count({ path: name, title: name, event: true });
+  }
+  if (GOATCOUNTER) {
+    // clicks on every call to action are counted as events; links with ?ref=… show up as referrers
+    [
+      ['.offcanvas-cta', 'click-menu-report'],
+      ['.ft-cta .p-more-btn', 'click-hero-report'],
+      ['.ft-cta .ghost-btn', 'click-hero-whats-in-report'],
+      ['.ft-linkedin', 'click-hero-linkedin'],
+      ['.report-cta .p-more-btn', 'click-report-section'],
+      ['.sticky-cta', 'click-sticky-report'],
+      ['.copy', 'click-copy-email'],
+      ['a[href^="mailto:"]', 'click-email'],
+      ['a[href*="t.me/"]', 'click-telegram'],
+      ['a[href*="linkedin.com"]', 'click-linkedin']
+    ].forEach(function (t) {
+      document.querySelectorAll(t[0]).forEach(function (el) {
+        if (!el.dataset.goatcounterClick) el.dataset.goatcounterClick = t[1];
+      });
+    });
+    document.querySelectorAll('.cta-strip .p-more-btn').forEach(function (el, i) {
+      el.dataset.goatcounterClick = i === 0 ? 'click-strip-after-work' : 'click-strip-after-services';
+    });
+    var gc = document.createElement('script');
+    gc.async = true;
+    gc.src = 'https://gc.zgo.at/count.js';
+    gc.dataset.goatcounter = 'https://' + GOATCOUNTER + '.goatcounter.com/count';
+    document.body.appendChild(gc);
+  }
+
   // report request: opens the visitor's mail app with the shop address filled in
   var form = document.getElementById('lead-form');
   if (form) form.addEventListener('submit', function (e) {
@@ -94,6 +128,7 @@
     var text = uk
       ? 'Добрий день, Володимире!\n\nБуду вдячний за безкоштовний звіт по магазину ' + url + '.\n\n'
       : 'Hi Volodymyr,\n\nI would like a free report on my shop: ' + url + '.\n\n';
+    track('form-report-request');
     location.href = 'mailto:vopy.work@gmail.com?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(text);
   });
 
