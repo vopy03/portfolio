@@ -1266,7 +1266,10 @@ footer {
     gap: 12px;
   }
   .fact b {
-    font-size: 32px;
+    font-size: 28px;
+  }
+  .fact.panel {
+    padding: 20px 16px;
   }
   .fact span {
     font-size: 17px;
