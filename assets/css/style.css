@@ -408,6 +408,9 @@ body.uk .lang::before {
 .cards.two {
   grid-template-columns: repeat(2, 1fr);
 }
+.cards.four {
+  grid-template-columns: repeat(4, 1fr);
+}
 .card {
   display: flex;
   flex-direction: column;
@@ -1354,6 +1357,9 @@ footer {
   .cards {
     grid-template-columns: 1fr;
   }
+  .cards.four {
+    grid-template-columns: repeat(2, 1fr);
+  }
   .steps, .facts {
     grid-template-columns: repeat(2, 1fr);
   }
@@ -1720,4 +1726,9 @@ footer {
     width: 100%;
     padding: 16px 0px;
   }
+}
+
+/* services: one column on phones (after the wider breakpoints so it wins) */
+@media only screen and (max-width: 750px) {
+  .cards.four { grid-template-columns: 1fr; }
 }
