@@ -14,11 +14,7 @@
   }
   setLang(body.classList.contains('uk') ? 'uk' : 'en');
   document.querySelectorAll('[data-set]').forEach(function (b) {
-    b.addEventListener('click', function () {
-      var sw = b.closest('.lang');
-      if (sw) sw.classList.add('ready'); // play the bounce only after a click, not on page load
-      setLang(b.dataset.set);
-    });
+    b.addEventListener('click', function () { setLang(b.dataset.set); });
   });
 
   // page transition curtain on internal links
@@ -115,6 +111,41 @@
     };
     new IntersectionObserver(function (en) { heroVisible = en[0].isIntersecting; update(); }).observe(hero);
     new IntersectionObserver(function (en) { contactVisible = en[0].isIntersecting; update(); }).observe(contact);
+  }
+
+  // questions: animate opening and closing instead of the instant jump
+  var faq = document.querySelector('.faq');
+  if (faq && !reduce && Element.prototype.animate) {
+    faq.classList.add('js-faq');
+    faq.querySelectorAll('details').forEach(function (d) {
+      var summary = d.querySelector('summary');
+      var running = null;
+      summary.addEventListener('click', function (e) {
+        e.preventDefault();
+        if (running) running.cancel();
+        var start = d.offsetHeight;
+        var closing = d.open && d.classList.contains('expanded');
+        var end;
+        if (closing) {
+          d.classList.remove('expanded');
+          d.classList.add('collapsing');
+          end = summary.offsetHeight + (d.offsetHeight - d.clientHeight);
+        } else {
+          d.classList.remove('collapsing');
+          d.classList.add('expanded');
+          d.open = true;
+          end = d.offsetHeight;
+        }
+        d.style.overflow = 'hidden';
+        running = d.animate({ height: [start + 'px', end + 'px'] }, { duration: 300, easing: 'cubic-bezier(.4, 0, .2, 1)' });
+        running.onfinish = function () {
+          if (closing) { d.open = false; d.classList.remove('collapsing'); }
+          d.style.overflow = '';
+          running = null;
+        };
+        running.oncancel = function () { d.style.overflow = ''; };
+      });
+    });
   }
 
   // copy e-mail

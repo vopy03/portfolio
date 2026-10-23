@@ -159,7 +159,7 @@ a:hover {
   padding: 3px;
   background-color: var(--bg-color);
 }
-/* the light pill slides under the active language with a small overshoot */
+/* the light pill slides under the active language */
 .lang::before {
   content: '';
   position: absolute;
@@ -169,27 +169,10 @@ a:hover {
   width: calc(50% - 3px);
   border-radius: 999px;
   background-color: var(--grey-color);
-  transform-origin: left center;
-  transition: translate .32s cubic-bezier(.3, .8, .4, 1);
+  transition: translate .3s cubic-bezier(.4, 0, .2, 1);
 }
 body.uk .lang::before {
   translate: 100% 0;
-  transform-origin: right center;
-}
-/* the bounce is a squash against the far edge, so the pill never leaves the switch */
-.lang.ready::before { animation: lang-bounce-l .5s ease-out; }
-body.uk .lang.ready::before { animation: lang-bounce-r .5s ease-out; }
-@keyframes lang-bounce-l {
-  0%, 58% { scale: 1 1; }
-  70% { scale: .86 1; }
-  85% { scale: 1.04 1; }
-  100% { scale: 1 1; }
-}
-@keyframes lang-bounce-r {
-  0%, 58% { scale: 1 1; }
-  70% { scale: .86 1; }
-  85% { scale: 1.04 1; }
-  100% { scale: 1 1; }
 }
 .lang button {
   position: relative;
@@ -208,7 +191,7 @@ body.uk .lang.ready::before { animation: lang-bounce-r .5s ease-out; }
   color: black;
 }
 @media (prefers-reduced-motion: reduce) {
-  .lang::before { transition: none; animation: none !important; }
+  .lang::before { transition: none; }
 }
 
 /* header end */
@@ -784,16 +767,20 @@ body.uk .lang.ready::before { animation: lang-bounce-r .5s ease-out; }
   position: relative;
 }
 .faq summary::-webkit-details-marker { display: none; }
-.faq summary::after {
-  content: '+';
+.faq summary::before, .faq summary::after {
+  content: '';
   position: absolute;
-  right: 18px;
   top: 50%;
-  transform: translateY(-50%);
-  font-size: 26px;
-  color: var(--muted-color);
+  background-color: var(--muted-color);
+  border-radius: 1px;
+  transition: transform .3s ease;
 }
-.faq details[open] summary::after { content: '−'; }
+.faq summary::after { right: 20px; width: 14px; height: 2px; margin-top: -1px; }
+.faq summary::before { right: 26px; width: 2px; height: 14px; margin-top: -7px; }
+.faq:not(.js-faq) details[open] summary::before,
+.faq details.expanded summary::before { transform: scaleY(0); }
+.faq details p { transition: opacity .3s ease; }
+.faq details.collapsing p { opacity: 0; }
 .faq details p {
   padding: 0 20px 18px;
   font-family: Candara, 'Fira Sans', sans-serif;
