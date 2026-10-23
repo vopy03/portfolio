@@ -169,16 +169,27 @@ a:hover {
   width: calc(50% - 3px);
   border-radius: 999px;
   background-color: var(--grey-color);
-  transition: transform .55s cubic-bezier(.34, 1.7, .5, 1), width .2s;
+  transform-origin: left center;
+  transition: translate .32s cubic-bezier(.3, .8, .4, 1);
 }
 body.uk .lang::before {
-  transform: translateX(100%);
+  translate: 100% 0;
+  transform-origin: right center;
 }
-.lang:active::before {
-  width: calc(50% + 6px);
+/* the bounce is a squash against the far edge, so the pill never leaves the switch */
+.lang.ready::before { animation: lang-bounce-l .5s ease-out; }
+body.uk .lang.ready::before { animation: lang-bounce-r .5s ease-out; }
+@keyframes lang-bounce-l {
+  0%, 58% { scale: 1 1; }
+  70% { scale: .86 1; }
+  85% { scale: 1.04 1; }
+  100% { scale: 1 1; }
 }
-body.uk .lang:active::before {
-  transform: translateX(calc(100% - 18px));
+@keyframes lang-bounce-r {
+  0%, 58% { scale: 1 1; }
+  70% { scale: .86 1; }
+  85% { scale: 1.04 1; }
+  100% { scale: 1 1; }
 }
 .lang button {
   position: relative;
@@ -197,7 +208,7 @@ body.uk .lang:active::before {
   color: black;
 }
 @media (prefers-reduced-motion: reduce) {
-  .lang::before { transition: none; }
+  .lang::before { transition: none; animation: none !important; }
 }
 
 /* header end */
@@ -656,8 +667,8 @@ body.uk .lang:active::before {
   top: 5px;
   width: 12px;
   height: 7px;
-  border-left: 2px solid var(--grey-color);
-  border-bottom: 2px solid var(--grey-color);
+  border-left: 2px solid #8fd19e;
+  border-bottom: 2px solid #8fd19e;
   transform: rotate(-45deg);
 }
 .ft-linkedin {
@@ -686,7 +697,7 @@ body.uk .lang:active::before {
 .card-art .a-line-s { stroke: var(--border-line-color); stroke-width: 6; stroke-linecap: round; fill: none; }
 .card-art .a-label { fill: var(--grey-color); font: 700 15px Podkova, Georgia, serif; }
 .card-art .a-arrow { stroke: var(--muted-color); stroke-width: 2; fill: none; stroke-linecap: round; stroke-linejoin: round; }
-.card-art .a-check { stroke: var(--grey-color); stroke-width: 4; fill: none; stroke-linecap: round; stroke-linejoin: round; }
+.card-art .a-check { stroke: #8fd19e; stroke-width: 4; fill: none; stroke-linecap: round; stroke-linejoin: round; }
 
 .svc-icon {
   width: 36px;
@@ -759,7 +770,9 @@ body.uk .lang:active::before {
 
 /* questions */
 
+/* two independent stacks: opening an answer only pushes down its own column */
 .faq { display: grid; grid-template-columns: 1fr 1fr; align-items: start; gap: 12px; }
+.faq-col { display: grid; gap: 12px; align-content: start; }
 .faq details.panel { padding: 0; }
 .faq summary {
   cursor: pointer;
@@ -835,6 +848,8 @@ body.uk .lang:active::before {
   .cta-strip p { font-size: 20px; line-height: 25px; }
   .report-mock { width: 100%; max-width: 360px; justify-self: center; }
   .faq { grid-template-columns: 1fr; }
+  .faq-col { display: contents; }
+  .faq details { order: var(--o); }
   .faq summary { font-size: 18px; line-height: 23px; padding: 14px 44px 14px 18px; }
   .faq details p { padding: 0 18px 16px; font-size: 17px; line-height: 22px; }
   .lf-row button { width: 100%; }

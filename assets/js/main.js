@@ -14,7 +14,11 @@
   }
   setLang(body.classList.contains('uk') ? 'uk' : 'en');
   document.querySelectorAll('[data-set]').forEach(function (b) {
-    b.addEventListener('click', function () { setLang(b.dataset.set); });
+    b.addEventListener('click', function () {
+      var sw = b.closest('.lang');
+      if (sw) sw.classList.add('ready'); // play the bounce only after a click, not on page load
+      setLang(b.dataset.set);
+    });
   });
 
   // page transition curtain on internal links
