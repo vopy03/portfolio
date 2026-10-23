@@ -189,7 +189,7 @@ a:hover {
   overflow: hidden;
   color: white;
   height: 100vh;
-  min-height: 720px;
+  min-height: 880px;
   background: linear-gradient(180deg, rgba(24, 20, 20, 0) 0%, rgba(24, 20, 20, 0.4) 100%), linear-gradient(261.01deg, #454545 6.83%, #181414 100%);
 }
 .welcome-block .wrapper {
@@ -199,7 +199,7 @@ a:hover {
 .first-text {
   position: absolute;
   height: fit-content;
-  top: 0;
+  top: 140px; /* below the header, which sits on top of the hero */
   bottom: 0;
   margin: auto 0;
   padding: 72px 60px;
